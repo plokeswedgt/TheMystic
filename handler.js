@@ -1601,6 +1601,10 @@ ${tradutor.texto1[1]} ${messageNumber}/3
     const settingsREAD = global.db.data.settings[mconn.conn.user.jid] || {};
     if (opts['autoread']) await mconn.conn.readMessages([m.key]);
     if (settingsREAD.autoread2) await mconn.conn.readMessages([m.key]);
+    if (!m.fromMem && m.text.match(/menu|اوكيجي|@212657035661|بوت|ريتا|المطور|اوامر/gi)) {
+    let emot = pickRandom(["🍉", "🫐", "🌚", "💦", "💫", "✨", "🌹", "🌟", "🌝", "💦"]) 
+    this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
+    function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
   }
 }
 
