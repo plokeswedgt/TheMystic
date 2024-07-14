@@ -1601,6 +1601,10 @@ ${tradutor.texto1[1]} ${messageNumber}/3
     const settingsREAD = global.db.data.settings[mconn.conn.user.jid] || {};
     if (opts['autoread']) await mconn.conn.readMessages([m.key]);
     if (settingsREAD.autoread2) await mconn.conn.readMessages([m.key]);
+    if (!m.fromMem && m.text.match(/menu|اوكيجي|@212657035661|بوت|ريتا|المطور|اوامر/gi)) {
+    let emot = pickRandom(["🍉", "🫐", "🌚", "💦", "💫", "✨", "🌹", "🌟", "🌝", "💦"]) 
+    this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
+    function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
   }
 }
 
@@ -1630,7 +1634,7 @@ export async function participantsUpdate({ id, participants, action }) {
       if (chat.welcome && !chat?.isBanned) {
         const groupMetadata = await m.conn.groupMetadata(id) || (conn.chats[id] || {}).metadata;
         for (const user of participants) {
-          let pp = 'https://telegra.ph/file/82e3ebbe8b61c4257ed14.jpg';
+          let pp = 'https://telegra.ph/file/b9c564ff37d6a22ce0a79.jpg';';
           try {
             pp = await m.conn.profilePictureUrl(user, 'image');
           } catch (e) {
