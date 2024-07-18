@@ -9,7 +9,7 @@ import moment from 'moment-timezone';
 
 global.owner = [
   ['‪212657035661', '🌨️ MR_OKIJI ', true],
-  ['212657035661', ' ICE ❄️', true],
+  ['212647668860', ' RIA ❄️', true],
 ];
 
 global.xaxa = 'kana'
