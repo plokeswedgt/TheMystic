@@ -8,7 +8,7 @@ let handler = async (m, {
     text,
     command
 }) => {
-            if (!text) return m.reply("هذا الامر خاص بالبحث عن المواضيع في ويكيبيديا نكتب هكذا \n*.بحت العدالة*")
+            if (!text) return m.reply("هذا الامر خاص بالبحث عن المواضيع في ويكيبيديا نكتب هكذا \n*.ويكيبيديا العدالة*")
             await m.reply(wait)
             try {
                 let item = await Wiki(text)
